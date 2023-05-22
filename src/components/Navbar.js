@@ -10,6 +10,7 @@ import { Routes, Route, useNavigate, Navigate, BrowserRouter} from 'react-router
 import { UserView } from './UserView';
 import { EditUser } from './EditUser';
 import { Adduser } from './Adduser';
+import { Wrong } from './Wrong';
 
 export function Dashbord(){
   const navigate = useNavigate();
@@ -35,6 +36,7 @@ export function Dashbord(){
       <Route path='/user/:id' element={<UserView/>}/>
       <Route path='/user/edit/:id' element={<EditUser/>}/>
       <Route path="/Adduser" element={<Adduser />}/>
+      <Route path="*" element={<Wrong />}/>
       
       </Routes>
     

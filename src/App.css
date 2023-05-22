@@ -114,3 +114,11 @@
   margin: 20px;
   border-radius: 30px;
 }
+.hed{
+ text-align: center;
+ margin-top: 30px;
+}
+.wrong-img{
+  width: 100%;
+  height: 800px;
+}
