@@ -43,7 +43,7 @@
   border: 5x solid red;
   margin: 2px solid red;
 }
-img{
+.img-con{
   width: 250px;
   height: 350px;
   border-radius: 20%;
@@ -55,4 +55,62 @@ img{
     justify-content: space-around;
     margin: 20px
 }
+.button{
+  margin: 10px;
+  border-radius: 5px;
+}
+.view:hover{
+  background-color: blue;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.edit:hover{
+  background-color: lightgreen;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.del:hover{
+  background-color: red;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.user-detail-container{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 70px;
+}
+.img-view-cont{
+  width: 500px;
+  height: 500px;
+  border-radius: 20%;
+  margin-bottom: 10px;
+}
+.first{
+  margin-bottom: 50px;
+}
+.details:hover{
+  box-shadow: skyblue 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 
+}
+.details{
+  padding: 50px;
+  border-radius: 20px 0 20px 0;
+}
+.user-put{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+  margin: 20px;
+  width: 70%;
+}
+.Edit-container{
+  display: flex; 
+}
+.edit-img{
+  width: 300px;
+  height:600px;
+  margin: 20px;
+  border-radius: 30px;
+}

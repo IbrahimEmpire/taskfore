@@ -1,7 +1,8 @@
 import { API } from './Api'
 import { useState, useEffect } from 'react';
-import {users} from './data.js'
-import { Routes, Route, useNavigate, Navigate} from 'react-router-dom';
+import {student} from './data.js'
+import { Routes, Route, useNavigate, Navigate, useParams} from 'react-router-dom';
+
 
 
 
@@ -9,29 +10,34 @@ import { Routes, Route, useNavigate, Navigate} from 'react-router-dom';
 export function User() {
 
   const [user, setUser] = useState([]);
-  const getDetail = () => {
-      fetch(API,
-          { method: "GET" })
-          .then((data) => data.json())
-          .then((res) => setUser(res));
+ 
+const navigate = useNavigate()
+  const getUser= ()=>{
+    fetch(`${student}`,{method:"GET"})
+    .then((res)=>res.json())
+    .then((res)=> setUser(res))
   }
+  useEffect(()=>{
+    getUser()
+    },[])
 
-  const navigate = useNavigate();
-
-  useEffect(() => getDetail(), [])
+  const deleteUser =(id)=>{
+    fetch(`https://63ddb97d367aa5a7a4135ba7.mockapi.io/user/${id}`, {method:"DELETE"})
+    .then(()=> getUser())
+  }
 
 
   
   return (
     <div className='carts'>
-      {user.map((user)=>   
+      {user.map((user, id)=>   
 
-      <div className='profile-container'>
-        <div className='img-con'>
-          <img src={user.image} alt='profile image' />
+      <div className='profile-container' key={id}>
+        <div >
+          <img className='img-con' src={user.image} alt='profile image' />
         </div>
         <div>
-          <h4>Name: {user.Name}</h4>
+          <h4>Name: {user.name}</h4>
           <h5>Id: {user.id}</h5>
         </div>
         <div>
@@ -40,7 +46,9 @@ export function User() {
           <p>📧 Email: {user.email}</p>
           <p>🏠 Location: {user.location}</p>
         </div>
-        <button>info</button>
+        <button className='button view' onClick={()=> navigate(`/user/${user.id}`)} >View</button>
+        <button className='button edit' onClick={()=> navigate(`/user/edit/${user.id}`)} >Edit</button>
+        <button className='button del' onClick={()=> deleteUser(user.id)} >Delete</button>
       </div>
   )}
      </div>

@@ -7,6 +7,7 @@
 
 import './App.css';
 import { Dashbord } from './Navbar';
+import { User } from './User';
 
 // import { User } from './User';
 

@@ -4,9 +4,12 @@ import Toolbar from '@mui/material/Toolbar';
 import {User} from './User'
 import { Button } from '@mui/material';
 import { Home} from './Home'
-import { UserDetail } from './userDetails';
+
 
 import { Routes, Route, useNavigate, Navigate, BrowserRouter} from 'react-router-dom';
+import { UserView } from './UserView';
+import { EditUser } from './EditUser';
+import { Adduser } from './Adduser';
 
 export function Dashbord(){
   const navigate = useNavigate();
@@ -18,25 +21,21 @@ export function Dashbord(){
     <Toolbar disableGutters>
       <Button color='inherit' onClick={()=>navigate("/")} >Home</Button>
       <Button color='inherit' onClick={()=>navigate("/user")} >Users</Button>
+      <Button color='inherit' onClick={()=>navigate("/Adduser")} >Add User</Button>
       
      {/*  <Button color='inherit'  >Home</Button>
       <Button color='inherit' onClick={()=>navigate("/user")} >Users</Button> */}
 
     </Toolbar>
     </AppBar>
-{/* 
-<Navbar bg="success" variant="light">
-        <Container>
-        <Button> <Navbar.Brand  onClick={() => navigate("/")} href="#home">Home</Navbar.Brand></Button>
-          <Nav className="me-auto">
-           <Button> <Nav.Link onClick={() => navigate("/")} href="#home">Dashbord</Nav.Link></Button>
-            
-          </Nav>
-        </Container>
-      </Navbar> */}
+
       <Routes>
         <Route path="/" element={<Home/>}/>
       <Route path="/user" element={<User />}/>
+      <Route path='/user/:id' element={<UserView/>}/>
+      <Route path='/user/edit/:id' element={<EditUser/>}/>
+      <Route path="/Adduser" element={<Adduser />}/>
+      
       </Routes>
     
         </div>
