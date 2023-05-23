@@ -24,7 +24,7 @@ export const UserView = () => {
         </div>
       <div className='details'>
       <div className='first'>
-          <h1>Name: {user.Name}</h1>
+          <h1>Name: {user.name}</h1>
           <h3>Id: {user.id}</h3>
         </div>
         <div>

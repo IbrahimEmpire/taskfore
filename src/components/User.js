@@ -1,7 +1,7 @@
-import { API } from '../Api'
+
 import { useState, useEffect } from 'react';
 import {student} from './data.js'
-import { Routes, Route, useNavigate, Navigate, useParams} from 'react-router-dom';
+
 
 
 
